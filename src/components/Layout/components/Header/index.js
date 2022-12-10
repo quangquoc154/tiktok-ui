@@ -10,9 +10,11 @@ import {
     faSignOut,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
+import routesConfig from '~/config/routes';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -95,7 +97,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok" />
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="Tiktok" />
+                </Link>
 
                 {/* Search */}
                 <Search />
@@ -130,7 +134,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/1971e99be0d67160f34f39fb1d66a0e5~c5_100x100.jpeg?x-expires=1670385600&x-signature=511jiXRF7xhls9NyoooQ6YtxuXs%3D"
+                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tiktok-obj/1659762540187665.jpeg?x-expires=1670850000&x-signature=2t%2FIFfKYKSRFpsvTjDN3y4QhXj0%3D"
                                 alt="Nguyen Van A"
                             />
                         ) : (
